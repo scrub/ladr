@@ -1,8 +1,17 @@
 language: node_js
 node_js:
-  - '0.10'
-  - '0.11'
+- '0.10'
+- '0.11'
 before_script:
-  - npm install -g bower grunt-cli
-  - bower install
+- npm install -g bower grunt-cli
+- bower install
 services: mongodb
+deploy:
+  provider: openshift
+  user: jon_hall@outlook.com
+  password:
+    secure: m7kkVzqZBY4xTSjkgWYp2Yc1JfnhWrU8iSbF3X5hKgJ/WOqpmzqpLh44rrBzpTua/l6cOUiI7FJjG0YhnzkAVoqdreXgay451Z/xyTnCj01erWTBJuQbyGHtfYDd2nZryHEAJZroQaMl4nEbPnBE30Mf8ez4d4L25Yr4Wic70ZE=
+  app: ladr
+  domain: openscrub
+  on:
+    repo: scrub/ladr
