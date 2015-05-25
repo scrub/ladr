@@ -13,7 +13,6 @@ passport.deserializeUser(function(id, done) {
 var LocalStrategy = require('passport-local').Strategy;
 passport.use(new LocalStrategy(function(username, password, done) {
   // TODO: retrieve user ...
-  console.log('LOGIN', username, password);
   if (username === 'test' && password === 'test') {
     done(null, user);
   } else {

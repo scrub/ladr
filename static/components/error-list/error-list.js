@@ -9,28 +9,24 @@ if (typeof __decorate !== "function") __decorate = function (decorators, target,
 if (typeof __param !== "function") __param = function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-var di_1 = require('angular2/di');
-var ng_zone_1 = require('angular2/src/core/zone/ng_zone');
-var Fetcher = (function () {
-    function Fetcher(zone) {
-        this.zone = zone;
+///<reference path="../../typings/angular2/angular2.d.ts" />
+var angular2_1 = require('angular2/angular2');
+var errors_1 = require('../../services/errors');
+// Annotation section
+var ErrorList = (function () {
+    function ErrorList(errorService) {
+        this.errorService = errorService;
     }
-    Fetcher.prototype.fetch = function (uri, opts) {
-        return fetch(uri, opts).then(function (resp) {
-            if (resp.status >= 200 && resp.status < 300) {
-                return resp.json();
-            }
-            else {
-                return resp.text().then(function (text) {
-                    return Promise.reject(text);
-                });
-            }
-        });
-    };
-    Fetcher = __decorate([
-        di_1.Injectable(),
-        __param(0, di_1.Inject(ng_zone_1.NgZone))
-    ], Fetcher);
-    return Fetcher;
+    ErrorList = __decorate([
+        angular2_1.Component({
+            selector: 'error-list'
+        }),
+        angular2_1.View({
+            templateUrl: 'views/components/error-list',
+            directives: [angular2_1.NgFor]
+        }),
+        __param(0, angular2_1.Inject(errors_1.Errors))
+    ], ErrorList);
+    return ErrorList;
 })();
-exports.Fetcher = Fetcher;
+exports.ErrorList = ErrorList;

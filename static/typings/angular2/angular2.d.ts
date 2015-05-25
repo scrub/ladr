@@ -534,7 +534,7 @@ declare module "angular2/angular2" {
    * - `<template [for]="#item" [of]="items" #i="index"><li>...</li></template>`
    *
    */
-  function For(): void;
+  function NgFor(): void;
 
   /**
    * Removes or recreates a portion of the DOM tree based on an {expression}.
@@ -606,6 +606,7 @@ declare module "angular2/angular2" {
 
  // Additions
  function Inject(arg: any): (target: any) => any;
+ function ElementRef(arg: any): () => any;
 }
 
 declare module "angular2/di" {

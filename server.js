@@ -5,7 +5,12 @@ var config = require('./config.js'),
     session = require('koa-generic-session'),
     passport = require('koa-passport'),
     Router = require('koa-router'),
-    koaBody = require('koa-body')({ formiddable: { multiples: false } }),
+    koaBody = require('koa-body')({
+      multipart: true,
+      formidable: {
+        multiples: false
+      }
+    }),
     serve = require('koa-static'),
     views = require('co-views'),
     render = views(__dirname + '/views', { map: { html: 'jade' }, ext: 'jade' }),
@@ -64,20 +69,11 @@ publicRoutes.post('/login', koaBody, function*(next) {
   }).call(this, next);
 });
 
-// POST /login
-/*publicRoutes.post('/login', koaBody,
-  passport.authenticate('local', , function (err, user) {
-
-    req.logIn(account, function() {
-
-        res.status(err ? 500 : 200).send(err ? err : account);
-    });
-})
-);*/
-
 publicRoutes.get('/logout', function*(next) {
   this.logout();
-  this.redirect('/');
+
+
+  // TODO: (this is wrong, so is this being a GET) this.redirect('/');
 });
 
 publicRoutes.get('/auth/facebook',
