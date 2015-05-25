@@ -1,3 +1,2 @@
-ul.error-list
-    li.error-item(*ng-for="#error of errorService.errors").
-        Error: {{error}}
+ul.error-list([show]="!!errorService.errors.length")
+    li.error-item(*ng-for="#error of errorService.errors") {{error}}

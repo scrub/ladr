@@ -301,6 +301,27 @@ app .footer {
   padding: 0.6em;
   text-align: center;
 }
+error-list {
+  min-height: 6.5em;
+  display: inline-block;
+}
+.error-list {
+  display: inline-block;
+  margin: 2em auto;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  border: 2px solid #f00;
+  padding: 0.5em;
+}
+.error-list .error-item {
+  color: #f00;
+  font-weight: bold;
+  font-size: 1.1em;
+  margin: 0.1em;
+}
+.hidden {
+  display: none !important;
+}
 html {
   height: 100%;
   width: 100%;
