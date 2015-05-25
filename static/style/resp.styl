@@ -1,0 +1,20 @@
+.row
+  display flex
+  flex-flow row wrap
+
+min(a, b)
+	(a < b) ? a : b
+
+getprefix(p)
+	(p != '') ? p + '-' : ''
+
+resp(a, f=1, p='')
+  for y in (1..a)
+    for x in (1..a)
+      if(x < y || (x == 1 && y == 1))
+        .{getprefix(p)}col-{x}-{y}
+          width min(100%, (f * x * 100 / y)%)
+          //padding 10px
+
+@media all and ( min-width: 600px )
+  resp(8)

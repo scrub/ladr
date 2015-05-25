@@ -1,0 +1,58 @@
+app-banner()
+  color white
+  background #bb5566
+  padding 0.6em
+
+app
+  display flex
+  min-height 100vh
+  flex-direction column
+
+  .header
+    app-banner()
+    display flex
+
+    h1
+      flex 5
+      font-size 2em
+      font-weight bold
+
+    user-widget
+      flex 1
+      text-align right
+      align-self center
+      padding-right 1em
+
+    a
+      color white
+      text-decoration none
+
+    a:hover
+      color #fafafa
+      text-shadow 1px 1px 2px #444
+      margin-top -1px
+      margin-left -1px
+      padding-bottom 1px
+      padding-right 1px
+
+    a:active
+      color #eaeaea
+      text-shadow none
+      margin-top 0
+      margin-left 0
+      padding-bottom 0
+      padding-right 0
+
+  .router
+    flex 1
+    display flex
+
+    .router-content
+      flex 1
+      text-align center
+      marging 0 auto
+      align-self center
+
+  .footer
+    app-banner()
+    text-align center

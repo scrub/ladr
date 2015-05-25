@@ -1,0 +1,58 @@
+app {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+app .header {
+  color: #fff;
+  background: #b56;
+  padding: 0.6em;
+  display: flex;
+}
+app .header h1 {
+  flex: 5;
+  font-size: 2em;
+  font-weight: bold;
+}
+app .header user-widget {
+  flex: 1;
+  text-align: right;
+  align-self: center;
+  padding-right: 1em;
+}
+app .header a {
+  color: #fff;
+  text-decoration: none;
+}
+app .header a:hover {
+  color: #fafafa;
+  text-shadow: 1px 1px 2px #444;
+  margin-top: -1px;
+  margin-left: -1px;
+  padding-bottom: 1px;
+  padding-right: 1px;
+}
+app .header a:active {
+  color: #eaeaea;
+  text-shadow: none;
+  margin-top: 0;
+  margin-left: 0;
+  padding-bottom: 0;
+  padding-right: 0;
+}
+app .router {
+  flex: 1;
+  display: flex;
+}
+app .router .router-content {
+  flex: 1;
+  text-align: center;
+  marging: 0 auto;
+  align-self: center;
+}
+app .footer {
+  color: #fff;
+  background: #b56;
+  padding: 0.6em;
+  text-align: center;
+}

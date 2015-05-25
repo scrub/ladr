@@ -1,0 +1,23 @@
+@import 'nib'
+global-reset()
+
+@import 'style/resp'
+@import 'components/**/*'
+
+$bg-edge = #fcfcfc
+$bg-core = #f0f0f0
+
+html
+  height 100%
+  width 100%
+  font-family 'Roboto', sans-serif
+
+body
+  height 100%
+  width 100%
+  background linear-gradient(left, 0% $bg-edge, 5% $bg-core, 95% $bg-core, 100% $bg-edge)
+
+.center-block
+  align-self center
+  text-align center
+  margin 0 auto
